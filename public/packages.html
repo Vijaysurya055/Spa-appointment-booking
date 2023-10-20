@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 50px;
+      background-image: url("package.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .package-card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .package-card:hover {
+      transform: scale(1.05); 
+    }
+
+    .package-card h3 {
+      color: #333;
+    }
+
+    .package-card p {
+      color: #666;
+    }
+
+    .package-card .price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .package-card .book-now-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .package-card:hover .book-now-btn {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="package-card">
+          <h3>Relaxation Package</h3>
+          <p>60-minute massage therapy<br>30-minute facial<br>20-minute hydrotherapy</p>
+          <div class="price">₹1999</div>
+          <a href="book.html" class="btn btn-primary book-now-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="package-card">
+          <h3>Rejuvenation Package</h3>
+          <p>90-minute stone massage<br>45-minute facial<br>30-minute pedicure</p>
+          <div class="price">₹2499</div>
+          <a href="book.html" class="btn btn-primary book-now-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="package-card">
+          <h3>Ultimate Spa Experience</h3>
+          <p>120-minute massage therapy<br>60-minute facial<br>45-minute hydrotherapy<br>30-minute pedicure</p>
+          <div class="price">₹3999</div>
+          <a href="book.html" class="btn btn-primary book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="package-card">
+          <h3>Refresh &amp; Renew Package</h3>
+          <p>60-minute facial<br>30-minute haircut</p>
+          <div class="price">₹1499</div>
+          <a href="book.html" class="btn btn-primary book-now-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="package-card">
+          <h3>Pamper Me Package</h3>
+          <p>45-minute facial<br>30-minute pedicure<br>30-minute waxing</p>
+          <div class="price">₹1899</div>
+          <a href="book.html" class="btn btn-primary book-now-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="package-card">
+          <h3>Full Body Bliss Package</h3>
+          <p>90-minute massage therapy<br>60-minute facial<br>45-minute hydrotherapy</p>
+          <div class="price">₹3499</div>
+          <a href="book.html" class="btn btn-primary book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

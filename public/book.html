@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Spa Appointment Booking</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ <style>
+    body {
+      padding: 50px;
+    }
+
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.7; 
+    }
+    body, html {
+    margin: 0;
+    padding: 0;
+  }
+    .background-image {
+      background-image: url('b.jpg'); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+
+    .appointment-form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8); 
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .appointment-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background-color: #17a2b8;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #138496;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      padding: 10px 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+    }
+    .navbar-nav .nav-link:hover {
+    color: #ff6600;
+}
+  </style>
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var service = document.getElementById("service").value;
+      var date = document.getElementById("date").value;
+      var time = document.getElementById("time").value;
+      if (name === "" || email === "" || phone === "" || service === "" || date === "" || time === "") {
+        alert("All fields must be filled out");
+        return false;
+      }
+  
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+      } 
+      return true;
+    }
+    
+    document.querySelector("form").addEventListener("submit", function (event) {
+      if (!validateForm()) {
+        event.preventDefault(); 
+      }
+    });
+    
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="cropped_image.png" class="img-thumbnail" height="100" width="100" alt="Logo">
+            </a>
+            <div class="navbar-brand d-flex justify-content-center align-items-center">
+                <h3>Spa Appointment booking</h3>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="book.html">Book an appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="fas fa-key"></i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <div class="header-background"></div>
+</header>
+  <div class="background-container">
+    <div class="background-image"></div>
+  </div>
+<br><br>
+  <div class="container appointment-form">
+    <h2>Book an Appointment</h2>
+
+    <form action="http://localhost:4000/book" method="post">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" class="form-control" id="name" name="fname" placeholder="Enter your full name" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="mob" placeholder="+91-XXXXXXXXXX" pattern="[0-9]{10}" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="service">Select Service</label>
+            <select class="form-control" name="service" id="service" required>
+              <option value="" >Choose a service</option>
+              <option value="massage">Massage therapy - ₹799</option>
+              <option value="stonemassage">Stone massage therapy - ₹999</option>
+              <option value="hydro">Hydrotherapy - ₹699</option>
+              <option value="facial">Facial - ₹499</option>
+              <option value="waxing">Waxing - ₹799</option>
+              <option value="pedicure">Pedicure - ₹999</option>
+              <option value="haircut">Haircut - ₹299</option>
+              <option value="relaxation package">Relaxation Package - ₹1999</option>
+              <option value="rejuvenation package">Rejuvenation Package - ₹2499</option>
+              <option value="Ultimate spa experience">Ultimate Spa Experience - ₹3999</option>
+              <option value="refresh & renew package ">Refresh & Renew Package - ₹1499 </option>
+              <option value="Pamper me package">Pamper Me Package - ₹1899</option>
+              <option value="full body bliss package">Full Body Bliss Package - ₹3499</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="date">Select Date</label>
+            <input type="date" class="form-control" name="date" id="date" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="time">Select Time</label>
+            <input type="time" name="time"class="form-control" id="time" required>
+          </div>
+    
+      <button type="submit" class="btn btn-primary btn-block">Submit Appointment</button>
+    </form>
+    <script>
+        const dateInput = document.getElementById('date');
+        dateInput.addEventListener('input', () => {
+        const currentDate = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', currentDate);
+        const timeInput = document.getElementById('time');
+        const currentTime = new Date();
+        const currentMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
+        timeInput.min = currentMinutes;
+        timeInput.addEventListener('input', () => {
+        const selectedTime = timeInput.valueAsNumber / 60000; 
+        if (selectedTime < currentMinutes) {
+          timeInput.value = ''; 
+      }
+  });
+      });
+    </script>
+  </div>
+<br><br><br>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <br>
+      <p>&copy; 2023 Mystical Salon & Spa. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Mystical Salon & Spa</title>
+    <script type="text/javascript">
+        function rateService(service, rating) {
+    const stars = document.querySelectorAll(`#rating-${service} .star`);
+    stars.forEach((star, index) => {
+        if (index < rating) {
+            star.classList.add('selected');
+        } else {
+            star.classList.remove('selected');
+        }
+    });
+    const ratingValue = document.querySelector(`#rating-${service} + .rating-value`);
+    ratingValue.textContent = rating;
+}
+    </script>
+    <style>
+        .rating-stars .star {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.rating-stars .star.selected {
+    color: gold;
+}
+.social-icons {
+    display: flex;
+    gap: 10px; 
+}
+
+.social-icon i {
+    font-size: 32px; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="cropped_image.png" class="img-thumbnail" height="100" width="100" alt="Logo">
+                </a>
+                <div class="navbar-brand d-flex justify-content-center align-items-center">
+                    <h3>Mystical Salon & Spa</h3>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active " aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="book.html">Book an appointment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="fas fa-key"></i> Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <div class="header-background"></div>
+    </header>
+    <section class="hero">
+        <h1 style="color:black">Welcome to Mystical Salon & Spa</h1>
+        <p style="color:black">Rejuvenate your body and mind with our luxurious spa treatments.</p>
+        <a href="book.html" class="cta-button">Book Now</a>
+    </section>
+    
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>Relax and unwind with our rejuvenating massage treatments.</p>
+        <div class="service-card-container">
+            <div class="service-card">
+                <a href="massage.html">
+                    <img src="m.jpg" alt="Massage"><br><br>
+                </a>
+                <h4 class="h4">Massage Therapy</h4>
+                <div class="service-rating" id="rating-massage">
+                    <div class="rating-stars">
+                        <span class="star" onclick="rateService('massage', 1)">&#9733;</span>
+                        <span class="star" onclick="rateService('massage', 2)">&#9733;</span>
+                        <span class="star" onclick="rateService('massage', 3)">&#9733;</span>
+                        <span class="star" onclick="rateService('massage', 4)">&#9733;</span>
+                        <span class="star" onclick="rateService('massage', 5)">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <a href="stone-massage.html">
+                    <img src="stone.jpg" alt="Stone Massage"><br><br>
+                </a>
+                <h4 class="h4">Stone Massage Therapy</h4>
+                <div class="service-rating" id="rating-stone">
+                    <div class="rating-stars">
+                        <span class="star" onclick="rateService('stone', 1)">&#9733;</span>
+                        <span class="star" onclick="rateService('stone', 2)">&#9733;</span>
+                        <span class="star" onclick="rateService('stone', 3)">&#9733;</span>
+                        <span class="star" onclick="rateService('stone', 4)">&#9733;</span>
+                        <span class="star" onclick="rateService('stone', 5)">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <a href="hydrotherapy.html">
+                    <img src="hydro.jpg" alt="Hydrotherapy"><br><br>
+                </a>
+                <h4 class="h4">Hydrotherapy</h4>
+                <div class="service-rating" id="rating-hydro">
+                    <div class="rating-stars">
+                        <span class="star" onclick="rateService('hydro', 1)">&#9733;</span>
+                        <span class="star" onclick="rateService('hydro', 2)">&#9733;</span>
+                        <span class="star" onclick="rateService('hydro', 3)">&#9733;</span>
+                        <span class="star" onclick="rateService('hydro', 4)">&#9733;</span>
+                        <span class="star" onclick="rateService('hydro', 5)">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <a href="facial.html">
+                    <img src="facial.jpg" alt="Facial"><br><br>
+                </a>
+                <h4 class="h4">Facial</h4>
+                <div class="service-rating" id="rating-facial">
+                    <div class="rating-stars">
+                        <span class="star" onclick="rateService('facial', 1)">&#9733;</span>
+                        <span class="star" onclick="rateService('facial', 2)">&#9733;</span>
+                        <span class="star" onclick="rateService('facial', 3)">&#9733;</span>
+                        <span class="star" onclick="rateService('facial', 4)">&#9733;</span>
+                        <span class="star" onclick="rateService('facial', 5)">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <a href="waxing.html">
+                    <img src="wax.jpg" alt="Waxing"><br><br>
+                </a>
+                <h4 class="h4">Waxing</h4>
+                <div class="service-rating" id="rating-waxing">
+                    <div class="rating-stars">
+                        <span class="star" onclick="rateService('waxing', 1)">&#9733;</span>
+                        <span class="star" onclick="rateService('waxing', 2)">&#9733;</span>
+                        <span class="star" onclick="rateService('waxing', 3)">&#9733;</span>
+                        <span class="star" onclick="rateService('waxing', 4)">&#9733;</span>
+                        <span class="star" onclick="rateService('waxing', 5)">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <a href="pedicure.html">
+                    <img src="pedicure.jpg" alt="Pedicure"><br><br>
+                </a>
+                <h3>Pedicure</h3>
+                <div class="service-rating" id="rating-pedicure">
+                    <div class="rating-stars">
+                        <span class="star" onclick="rateService('pedicure', 1)">&#9733;</span>
+                        <span class="star" onclick="rateService('pedicure', 2)">&#9733;</span>
+                        <span class="star" onclick="rateService('pedicure', 3)">&#9733;</span>
+                        <span class="star" onclick="rateService('pedicure', 4)">&#9733;</span>
+                        <span class="star" onclick="rateService('pedicure', 5)">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <a href="salon.html">
+                    <img src="salon.jpg" alt="Salon"><br><br>
+                </a>
+                <h3>Unisex Salon</h3>
+                <div class="service-rating" id="rating-salon">
+                    <div class="rating-stars">
+                        <span class="star" onclick="rateService('salon', 1)">&#9733;</span>
+                        <span class="star" onclick="rateService('salon', 2)">&#9733;</span>
+                        <span class="star" onclick="rateService('salon', 3)">&#9733;</span>
+                        <span class="star" onclick="rateService('salon', 4)">&#9733;</span>
+                        <span class="star" onclick="rateService('salon', 5)">&#9733;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <center><section>
+        <h4 style="color:black;">We have packages at low prices</h4>
+        <br>
+        <a href="packages.html" class="cta-button">See all packages</a>
+    </section></center>
+    <br><br>
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p class="intro">Welcome to <span>Mystical Salon &amp; Spa</span>, where tranquility meets transformation.</p>
+                <p>Mystical Spa is a haven of serenity and rejuvenation nestled in the heart of the city. With an unwavering dedication to wellness and a pursuit of excellence, we invite you to embark on a journey of renewal that's beyond compare.</p>
+                <p class="highlight">Founded by wellness enthusiasts, our spa is a manifestation of our belief in creating an oasis where mind, body, and spirit unite in harmony.</p>
+                <p>Our team of highly skilled therapists and estheticians are not only experts in their craft, but they are also passionate healers who understand the profound power of touch and beauty.</p>
+                <p>At Mystical Spa, our philosophy revolves around holistic well-being, embracing both the physical and emotional aspects of your health. From the soothing caress of massages that melt away tensions to the opulent luxury of facials that restore your innate radiance, each treatment is meticulously curated to offer a transcendent escape from the modern demands.</p>
+                <p class="highlight">However, our commitment goes beyond treatments; it's an experience. The moment you step into our ethereal haven, you'll be cocooned in an ambiance of tranquility.</p>
+                <p>Soft, enchanting lighting, delicate scents that calm the soul, and harmonious melodies weave an atmosphere where you can truly let go and find solace.</p>
+                <p>We're more than a spa; we're a refuge where self-care is revered and relaxation is an art. Whether you're seeking a solitary retreat, a cherished moment with a loved one, or a setting to celebrate life's milestones, Mystical Spa is here to indulge your desires.</p>
+                <p class="highlight">Elevate yourself to the luxury you truly deserve, reinvigorate your senses, and embrace a renewed sense of well-being.</p>
+                <p>Your journey towards pure relaxation and rejuvenation commences here, with us.</p>
+            </div>
+        </div>
+    </section><br>
+    <section id="contact" class="contact c">
+        <div class="container">
+            <h2 class="text-center highlight" style="font-family: 'Times New Roman', Times, serif; color:black">Contact Us</h2>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <p style="font-family: 'Times New Roman';font-size:20px;color:Black;">Have questions or ready to book an appointment?</p>
+                        <p class="highlight">Reach out to us, and we'll be delighted to assist you.</p>
+                        <div class="contact-details">
+                            <p class="highlight"><strong>Address:</strong> 65-A,Opp. M&F Dress Shop, Perundurai, Erode</p>
+                            <p class="highlight"><strong>Email:</strong> info@mysticalspa.com</p>
+                            <p class="highlight"><strong>Phone:</strong> (123) 456-7890</p>
+                        </div>
+                    </div><h4 style="font-family: 'Times New Roman', Times, serif;color: red;">Follow us on!</h4>
+                    <div class="social-icons">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3 class="mb-4" style="font-family: 'Times New Roman', Times, serif; color:red">Send Us a Feedback</h3>
+                        <form action="http://localhost:4000/feedback" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label" style="color:black;font-weight: bold;">Your Name</label>
+                                <input type="text" id="name" class="form-control" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label" style="color:black;font-weight: bold;">Your Email</label>
+                                <input type="email" id="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label"style="color:black;font-weight: bold;">Share your Experience</label>
+                                <textarea id="message" class="form-control" name="feedback" rows="4" required></textarea>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary">Send</button><br><br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Mystical Salon & Spa. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
